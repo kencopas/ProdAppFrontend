@@ -9,7 +9,7 @@ export default function HomePage() {
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/api`)
       .then((res) => res.json())
       .then((data) => setMessage(data.message))
-      .catch((err) => setMessage('Error connecting to backend'))
+      .catch(() => setMessage('Error connecting to backend'))
   }, [])
 
   return (
